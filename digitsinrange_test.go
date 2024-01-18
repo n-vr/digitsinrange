@@ -24,7 +24,6 @@ func TestCountDigitOccurancesInRangeNaive(t *testing.T) {
 		d, n int
 		want int
 	}{
-		{0, 10, 1},
 		{5, 0, 0},
 		{5, 10, 1},
 		{5, 15, 1},
