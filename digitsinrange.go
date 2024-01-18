@@ -1,9 +1,9 @@
 package digitsinrange
 
-func countXInN(x, n int) int {
+func countDInN(d, n int) int {
 	var count int
 	for n > 0 {
-		if n%10 == x {
+		if n%10 == d {
 			count++
 		}
 		n /= 10
@@ -11,13 +11,13 @@ func countXInN(x, n int) int {
 	return count
 }
 
-// CountDigitOccurancesInRangeNaive counts the number of occurances of a digit x
-// in the range [0, max) by iterating over the range and counting the number of
+// CountDigitOccurancesInRangeNaive counts the number of occurances of a digit d
+// in the range [0, n) by iterating over the range and counting the number of
 // occurances of the digit in each number.
-func CountDigitOccurancesInRangeNaive(x, max int) int {
+func CountDigitOccurancesInRangeNaive(d, n int) int {
 	var count int
-	for i := 0; i < max; i++ {
-		count += countXInN(x, i)
+	for i := 0; i < n; i++ {
+		count += countDInN(d, i)
 	}
 	return count
 }
