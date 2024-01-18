@@ -16,7 +16,7 @@ func countDInN(d, n int) int {
 // occurances of the digit in each number.
 func CountDigitOccurancesInRangeNaive(d, n int) int {
 	var count int
-	for i := 0; i < n; i++ {
+	for i := 0; i <= n; i++ {
 		count += countDInN(d, i)
 	}
 	return count
