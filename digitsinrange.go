@@ -23,7 +23,7 @@ func CountDigitOccurancesInRangeNaive(d, n int) int {
 }
 
 // CountDigitOccurancesInRange counts the number of occurances of a digit d
-// in the range [0, n) by relying on some math. d cannot be 0.
+// in the range [0, n) by relying on some math.
 //
 //   - 1 occurrance of x from 0 to 10
 //   - 10 occurances of x from 0 to 100
@@ -35,6 +35,7 @@ func CountDigitOccurancesInRangeNaive(d, n int) int {
 func CountDigitOccurancesInRange(d, n int) int {
 	count := 0
 	factor := 1
+	prevLSD := 0
 
 	for n > 0 {
 		lsd := n % 10
@@ -43,10 +44,13 @@ func CountDigitOccurancesInRange(d, n int) int {
 		count += n * factor
 
 		if lsd >= d {
-			count += (n + 1) * factor
+			count += prevLSD + 1
 		}
 
+		// fmt.Println("lsd:", lsd, "n:", n, "factor:", factor, "count:", count)
+
 		factor *= 10
+		prevLSD = lsd
 	}
 
 	return count
