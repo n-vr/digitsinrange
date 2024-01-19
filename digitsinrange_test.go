@@ -33,6 +33,10 @@ var testCases = []struct {
 	{5, 110, 21},
 	{5, 350, 66},
 	{1, 13, 6},
+	{9, 1250000, 720000},
+	{8, 958366, 572833},
+	{7, 76495, 36395},
+	{6, 759, 246},
 }
 
 func TestCountDigitOccurancesInRangeNaive(t *testing.T) {
